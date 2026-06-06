@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Ramrich | Hotel & Banquets — Ekala, Ja-ela, Sri Lanka</title>
+  <meta name="description" content="Hotel RamRich and Banquets — one of the largest banquet halls in Sri Lanka. Three magnificent halls for weddings, conferences, parties, and photoshoots, featuring elegant classical architecture and luxury interiors.">
+  <link rel="icon" type="image/svg+xml" href="ramrich.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== PAGE LOADER ========== -->
+  <div class="page-loader" id="pageLoader">
+    <div class="page-loader__inner">
+      <img src="ramrich.svg" alt="" class="page-loader__logo">
+      <div class="page-loader__bar">
+        <div class="page-loader__bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav nav--transparent" id="mainNav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="ramrich.svg" alt="Hotel Ramrich Logo">
+        <div class="nav__logo-text">
+          Ramrich
+          <span>Ekala</span>
+        </div>
+      </a>
+
+      <div class="nav__links" id="navLinks">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#venues" class="nav__link">Venues</a>
+        <a href="gallery.html" class="nav__link">Gallery</a>
+        <a href="#reservation" class="nav__link">Reservations</a>
+        <a href="#contact" class="nav__link">Contact</a>
+        <a href="#reservation" class="nav__cta">Book Now</a>
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__video-wrap">
+      <video class="hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true" role="none">
+        <source src="ramrich.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__overlay"></div>
+
+    <!-- Decorative classical column overlays -->
+    <div class="hero__columns" aria-hidden="true">
+      <div class="hero__column hero__column--left"></div>
+      <div class="hero__column hero__column--right"></div>
+    </div>
+
+    <div class="hero__content">
+      <img src="ramrich.svg" alt="Hotel Ramrich Logo" class="hero__logo">
+      <p class="hero__subtitle">Est. 2015 · Ekala, Ja-ela, Sri Lanka</p>
+      <h1 class="hero__title">Hotel Ramrich</h1>
+      <p class="hero__desc">Where the grandeur of classical architecture meets the warmth of modern hospitality — one of the largest banquet venues in Sri Lanka.</p>
+      <div class="hero__actions">
+        <a href="#reservation" class="btn btn--primary">Make a Reservation</a>
+        <a href="gallery.html" class="btn btn--secondary">Explore Gallery</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll-indicator" aria-hidden="true">
+      <span>Scroll to Discover</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+
+  </section>
+
+  <!-- ========== ABOUT / ATMOSPHERE ========== -->
+  <section class="section section--columns about" id="about">
+
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image-block reveal reveal--left">
+          <img src="coverimage.jpg" alt="Hotel Ramrich Ekala — Aerial view of the grand venue with classical columns and fountains" class="about__image">
+          <div class="about__image-frame" aria-hidden="true"></div>
+        </div>
+
+        <div class="about__content reveal reveal--right">
+          <p class="section-label">Our Story</p>
+          <h2>The Epitome of Grandeur in the Heart of Ekala</h2>
+          <p>Hotel Ramrich and Banquets, established in 2015, stands as a premier luxury banquet destination in Ja-Ela. Featuring towering classical columns, lush landscaped gardens, and magnificent interiors, we provide the perfect setting for your most prestigious events.</p>
+          <p>The full ballroom can accommodate up to 600 theatre style. Our colossal Grand Ballroom entrance is designed to impress — every corner of Ramrich whispers of refined elegance and timeless sophistication.</p>
+
+          <div class="about__stats">
+            <div class="reveal reveal--delay-1">
+              <div class="about__stat-number">3</div>
+              <div class="about__stat-label">Grand Halls</div>
+            </div>
+            <div class="reveal reveal--delay-2">
+              <div class="about__stat-number" id="statCapacity">600+</div>
+              <div class="about__stat-label">Guest Capacity</div>
+            </div>
+            <div class="reveal reveal--delay-3">
+              <div class="about__stat-number">10+</div>
+              <div class="about__stat-label">Years of Excellence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LUXURY ELEGANT DIVIDER ========== -->
+  <div class="laurel-divider" aria-hidden="true" style="background: var(--sand-100); padding-block: var(--space-3xl);">
+    <div class="divider-line" style="width: 150px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);"></div>
+    <div class="divider-crest" style="color: var(--accent-gold); font-size: 1.5rem; letter-spacing: 0.2em; font-family: var(--font-heading);">✦ ✦ ✦</div>
+    <div class="divider-line" style="width: 150px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);"></div>
+  </div>
+
+  <!-- ========== VENUES / SERVICES ========== -->
+  <section class="section section--alt" id="venues">
+    <div class="container">
+      <div class="services__header reveal">
+        <p class="section-label">Our Spaces</p>
+        <h2>Find the Best Venue For Your Event</h2>
+        <p>From intimate gatherings to grand banquets, our halls are built to host occasions worthy of your most treasured celebrations.</p>
+      </div>
+
+      <div class="services__grid">
+        <!-- Wedding Venue -->
+        <div class="service-card reveal reveal--delay-1">
+          <div class="service-card__image-wrap">
+            <img src="weddingcouple-1.jpg" alt="Romantic wedding setting at Hotel Ramrich with lush landscaped gardens" class="service-card__image" loading="lazy">
+            <div class="service-card__image-overlay"></div>
+            <div class="service-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Weddings</h3>
+            <p class="service-card__desc">Craft your fairy-tale wedding in our lush landscaped gardens and magnificent ballrooms adorned in gold and ivory.</p>
+            <a href="gallery.html#weddings" class="service-card__link">
+              View Wedding Gallery
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Grand Halls -->
+        <div class="service-card reveal reveal--delay-2">
+          <div class="service-card__image-wrap">
+            <img src="hall-1.jpg" alt="Luxurious grand ballroom with crystal chandelier and gold-blue carpet" class="service-card__image" loading="lazy">
+            <div class="service-card__image-overlay"></div>
+            <div class="service-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 21h18M3 7v14M21 7v14M6 7V4h12v3M9 21v-4h6v4"/>
+              </svg>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Melody Ballroom</h3>
+            <p class="service-card__desc">Column free with customizable color lighting, surround sound, LED dance floor, and giant chandelier. Accommodates 400 guests.</p>
+            <a href="gallery.html#halls" class="service-card__link">
+              View Hall Gallery
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Conferences -->
+        <div class="service-card reveal reveal--delay-3">
+          <div class="service-card__image-wrap">
+            <img src="conferences-1.jpg" alt="Professional conference setup at Hotel Ramrich" class="service-card__image" loading="lazy">
+            <div class="service-card__image-overlay"></div>
+            <div class="service-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 14l9-5-9-5-9 5 9 5zM12 14v7M3 9v7l9 5 9-5V9"/>
+              </svg>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Elina Banquet Hall</h3>
+            <p class="service-card__desc">Perfect for conferences, birthday parties, and get-togethers with customizable lighting, projector, and sound. Accommodates 150 guests.</p>
+            <a href="gallery.html#conferences" class="service-card__link">
+              View Conference Gallery
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Parties & Celebrations -->
+        <div class="service-card reveal reveal--delay-4">
+          <div class="service-card__image-wrap">
+            <img src="parties-1.jpg" alt="Party venue with vibrant decorations" class="service-card__image" loading="lazy">
+            <div class="service-card__image-overlay"></div>
+            <div class="service-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Aragon Banquet Hall</h3>
+            <p class="service-card__desc">Enjoy surrounding landscaped garden, customizable color lighting, surround sound, and chandelier. Accommodates 250 guests.</p>
+            <a href="gallery.html#parties" class="service-card__link">
+              View Party Gallery
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PARALLAX BANNER ========== -->
+  <div class="parallax-banner">
+    <div class="parallax-banner__bg" style="background-image: url('weddingdance-floor-3.jpg');"></div>
+    <div class="parallax-banner__overlay"></div>
+    <div class="parallax-banner__content reveal">
+      <p class="section-label" style="justify-content: center; color: rgba(255,255,255,0.7);">
+        <span class="divider-line" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); width: 40px; height: 1px;"></span>
+        Timeless Luxury
+        <span class="divider-line" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); width: 40px; height: 1px;"></span>
+      </p>
+      <h2>Every Detail. Crafted to Perfection.</h2>
+      <p>Every element at Hotel Ramrich is curated with grand precision, refined aesthetics, and unwavering excellence to make your celebrations truly timeless.</p>
+      <a href="gallery.html" class="btn btn--primary">Explore Our Gallery</a>
+    </div>
+  </div>
+
+  <!-- ========== PHOTOSHOOT LOCATION PREVIEW ========== -->
+  <section class="section section--columns" id="photoshoots">
+    <div class="container">
+      <div class="services__header reveal">
+        <p class="section-label">Exquisite Settings</p>
+        <h2>Photoshoot Locations</h2>
+        <p>Our scenic landscaped gardens, grand classical architecture, and elegant backdrops create the perfect canvas for your professional pre-shoot and wedding photography.</p>
+      </div>
+
+      <div class="gallery-grid" style="max-width: 1000px; margin-inline: auto; grid-template-columns: repeat(3, 1fr);">
+        <div class="gallery-item reveal reveal--scale reveal--delay-1">
+          <img src="photoshoots-0.jpg" alt="Photoshoot location with classical architecture" loading="lazy">
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__label">Garden Path</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal reveal--scale reveal--delay-2">
+          <img src="photoshoots-1.jpg" alt="Scenic photoshoot backdrop" loading="lazy">
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__label">Sculpture Garden</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal reveal--scale reveal--delay-3">
+          <img src="photoshoots-2.jpg" alt="Wedding photoshoot location" loading="lazy">
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__label">Grand Entrance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESERVATION & CONTACT ========== -->
+  <section class="section section--alt" id="reservation">
+    <div class="container">
+      <div class="services__header reveal">
+        <p class="section-label">Claim Your Date</p>
+        <h2>Make a Reservation</h2>
+        <p>Secure your legendary event at Hotel Ramrich. Fill in the details below and our team will reach out to you promptly.</p>
+      </div>
+
+      <div class="reservation__grid">
+        <div class="reservation__info reveal reveal--left" id="contact">
+          <p class="section-label">Reach Us</p>
+          <h2>Contact Details</h2>
+          <p>Our team is ready to assist you in planning the perfect event. Reach out through any of the channels below.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="contact-detail__text">
+              <h4>Location</h4>
+              <p id="contactAddress">No 15, Temple Road, Ekala,<br>Ja-ela, Sri Lanka</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div class="contact-detail__text">
+              <h4>Phone</h4>
+              <p id="contactPhone"><a href="tel:+94112225884" style="color: inherit;">+94 11 222 5884</a><br><a href="tel:+94112225885" style="color: inherit;">+94 11 222 5885</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contact-detail__text">
+              <h4>Email</h4>
+              <p id="contactEmail">info@hotelramrich.lk</p>
+            </div>
+          </div>
+
+          <div class="contact-detail" style="border-bottom: none;">
+            <div class="contact-detail__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="contact-detail__text">
+              <h4>Operating Hours</h4>
+              <p id="contactHours">Monday — Sunday<br>8:00 AM — 10:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reservation Form -->
+        <div class="reveal reveal--right">
+          <form class="form" id="reservationForm">
+            <h3 class="form__title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" style="vertical-align: middle; margin-right: 8px;">
+                <path d="M19 4H5a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V6a2 2 0 00-2-2z"/>
+                <path d="M8 9h8M8 13h5"/>
+              </svg>
+              Reservation Request
+            </h3>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="fullName" class="form__label">Full Name</label>
+                <input type="text" id="fullName" class="form__input" placeholder="Your name" autocomplete="name" required>
+              </div>
+              <div class="form__group">
+                <label for="phone" class="form__label">Phone Number</label>
+                <input type="tel" id="phone" class="form__input" placeholder="+94 XX XXX XXXX" autocomplete="tel" required>
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label for="email" class="form__label">Email Address</label>
+              <input type="email" id="email" class="form__input" placeholder="your@email.com" autocomplete="email" required>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="eventType" class="form__label">Event Type</label>
+                <select id="eventType" class="form__select" required>
+                  <option value="" disabled selected>Select event type</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="conference">Conference</option>
+                  <option value="birthday">Birthday Party</option>
+                  <option value="party">Other Party</option>
+                  <option value="photoshoot">Photoshoot</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label for="eventDate" class="form__label">Preferred Date</label>
+                <input type="date" id="eventDate" class="form__input" required>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="guestCount" class="form__label">Estimated Guests</label>
+                <select id="guestCount" class="form__select">
+                  <option value="" disabled selected>Select range</option>
+                  <option value="1-50">1 — 50 Guests</option>
+                  <option value="51-100">51 — 100 Guests</option>
+                  <option value="101-200">101 — 200 Guests</option>
+                  <option value="201-350">201 — 350 Guests</option>
+                  <option value="351-500">351 — 500+ Guests</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label for="hall" class="form__label">Preferred Hall</label>
+                <select id="hall" class="form__select">
+                  <option value="" disabled selected>Select hall</option>
+                  <option value="hall-melody">Melody Ballroom</option>
+                  <option value="hall-elina">Elina Banquet Hall</option>
+                  <option value="hall-aragon">Aragon Banquet Hall</option>
+                  <option value="outdoor">Outdoor Garden</option>
+                  <option value="any">No Preference</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label for="message" class="form__label">Additional Details</label>
+              <textarea id="message" class="form__textarea" placeholder="Tell us about your event requirements, special requests, or any questions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary form__submit">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+              </svg>
+              Submit Reservation Request
+            </button>
+          </form>
+
+          <!-- Success message (hidden by default) -->
+          <div class="form__success" id="formSuccess">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" style="margin-inline: auto; margin-bottom: 16px;">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <h3>Reservation Request Sent!</h3>
+            <p style="color: var(--text-secondary);">Thank you for choosing Hotel Ramrich. Our team will contact you within 24 hours to confirm your booking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="ramrich.svg" alt="Hotel Ramrich Logo">
+          <p id="footerBrandDesc">Where classical architectural grandeur meets the warmth of modern hospitality. A premier luxury destination for life's most magnificent milestones.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Quick Links</h4>
+          <a href="#about" class="footer__link">About</a>
+          <a href="#venues" class="footer__link">Venues</a>
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="#reservation" class="footer__link">Reservations</a>
+          <a href="#contact" class="footer__link">Contact</a>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Venues</h4>
+          <a href="gallery.html#weddings" class="footer__link">Weddings</a>
+          <a href="gallery.html#halls" class="footer__link">Grand Halls</a>
+          <a href="gallery.html#conferences" class="footer__link">Conferences</a>
+          <a href="gallery.html#parties" class="footer__link">Parties</a>
+          <a href="gallery.html#photoshoots" class="footer__link">Photoshoots</a>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Visit Us</h4>
+          <p id="footerAddress" style="font-size: 0.9rem; line-height: 1.7;">Hotel Ramrich,<br>No 15, Temple Road,<br>Ekala, Ja-ela, Sri Lanka</p>
+          <p id="footerPhone" style="font-size: 0.9rem; margin-top: 12px;"><a href="tel:+94112225884" style="color: inherit;">+94 11 222 5884</a><br><a href="tel:+94112225885" style="color: inherit;">+94 11 222 5885</a></p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 Hotel Ramrich Ekala. All Rights Reserved.</p>
+        <p>Defining Luxury Banquets.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase Compatibility SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
