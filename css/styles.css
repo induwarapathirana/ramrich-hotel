@@ -3,8 +3,7 @@
    Luxury Hotel Theme · Sand & Royal Blue · Light Mode · Elegant Aesthetic
    =================================================================== */
 
-/* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+/* ---------- Fonts are preloaded async in the HTML <head> for performance ---------- */
 
 /* ===================================================================
    1. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
@@ -35,12 +34,22 @@
   --royal-900: #060A1C;
 
   /* — Accent — */
-  --accent-gold:   #D4992A;
-  --accent-gold-bright: #F3A61F;
+  --accent-gold:   #C9A227;   /* antique classical gold */
+  --accent-gold-bright: #E7C15B;
   --accent-bronze: #B8860B;
   --accent-terracotta: #C4956A;
   --accent-pink:   #DA8BBA;
   --accent-blue:   #2F3090;
+
+  /* — Marble (Greek revival) — */
+  --marble-50:  #FBFAF6;   /* purest marble */
+  --marble-100: #F4F1E9;   /* aged ivory marble */
+  --marble-200: #E9E4D6;   /* veined shadow */
+  --marble-vein: rgba(120, 110, 88, 0.10);
+  --aegean:     #123A5A;   /* deep aegean blue */
+
+  /* — Greek key (meander) pattern, gold on transparent — */
+  --meander: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='16' viewBox='0 0 48 16'%3E%3Cpath fill='none' stroke='%23C9A227' stroke-width='1.5' d='M0 13h5V5h6v8h5V1h6v12h5V5h6v8h5V1h5'/%3E%3C/svg%3E");
 
   /* — Neutral — */
   --white:  #FFFDF8;
@@ -55,8 +64,8 @@
   --gray-700: #403830;
 
   /* — Semantic — */
-  --bg-primary:   var(--sand-50);
-  --bg-secondary: var(--sand-100);
+  --bg-primary:   var(--marble-50);
+  --bg-secondary: var(--marble-100);
   --bg-card:      var(--white);
   --text-primary: var(--royal-900);
   --text-secondary: var(--gray-600);
@@ -66,7 +75,7 @@
 
   /* — Typography — */
   --font-heading:   'Cinzel', 'Georgia', serif;
-  --font-display:   'Cinzel Decorative', 'Cinzel', serif;
+  --font-display:   'Cinzel', 'Georgia', serif;
   --font-body:      'Inter', system-ui, -apple-system, sans-serif;
   --font-elegant:   'Cormorant Garamond', 'Georgia', serif;
 
@@ -131,9 +140,13 @@ body {
   font-family: var(--font-body);
   color: var(--text-primary);
   background-color: var(--bg-primary);
+  /* Subtle drifting marble veining + warm gold light — all CSS, no image weight */
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(212, 153, 42, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(30, 40, 112, 0.02) 0%, transparent 50%);
+    linear-gradient(115deg, transparent 0%, var(--marble-vein) 40%, transparent 41%),
+    linear-gradient(200deg, transparent 0%, var(--marble-vein) 60%, transparent 61%),
+    radial-gradient(ellipse at 15% 0%, rgba(201, 162, 39, 0.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 100%, rgba(18, 58, 90, 0.04) 0%, transparent 45%);
+  background-attachment: fixed;
   line-height: 1.7;
   overflow-x: hidden;
 }
@@ -205,10 +218,13 @@ h4 { font-size: clamp(1.1rem, 1.5vw + 0.2rem, 1.5rem); }
 .section-label::after {
   content: '';
   display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--accent-gold);
+  width: 48px;
+  height: 16px;
+  background: var(--meander) left center / 48px 16px repeat-x;
+  opacity: 0.85;
 }
+
+.section-label::before { transform: scaleX(-1); }
 
 /* ===================================================================
    4. LAYOUT UTILITIES
@@ -232,8 +248,24 @@ h4 { font-size: clamp(1.1rem, 1.5vw + 0.2rem, 1.5rem); }
 .section--alt {
   background-color: var(--bg-secondary);
   background-image:
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4992A' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    linear-gradient(180deg, rgba(255,255,255,0.5), transparent 30%),
+    linear-gradient(125deg, transparent 44%, var(--marble-vein) 45%, transparent 46%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A227' fill-opacity='0.035'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
+
+/* Greek-key (meander) top & bottom borders on alternating sections */
+.section--alt::before,
+.section--alt::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: var(--meander) center / 48px 12px repeat-x;
+  opacity: 0.35;
+}
+.section--alt::before { top: 0; }
+.section--alt::after { bottom: 0; transform: scaleY(-1); }
 
 .grid {
   display: grid;
@@ -262,8 +294,24 @@ h4 { font-size: clamp(1.1rem, 1.5vw + 0.2rem, 1.5rem); }
 
 .laurel-divider .divider-line {
   width: 150px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  height: 12px;
+  background: var(--meander) center / 48px 12px repeat-x;
+  opacity: 0.6;
+}
+
+/* Gilded laurel-wreath emblem — the signature Greek motif */
+.divider-crest {
+  width: 76px;
+  height: 62px;
+  flex: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='62' viewBox='0 0 76 62'%3E%3Cg fill='none' stroke='%23C9A227' stroke-width='1.4' stroke-linecap='round'%3E%3Cpath d='M38 58 C24 52 15 40 16 22'/%3E%3Cpath d='M38 58 C52 52 61 40 60 22'/%3E%3C/g%3E%3Cg fill='%23C9A227'%3E%3Cellipse cx='19' cy='48' rx='4.2' ry='1.7' transform='rotate(-58 19 48)'/%3E%3Cellipse cx='16.5' cy='40' rx='4.2' ry='1.7' transform='rotate(-74 16.5 40)'/%3E%3Cellipse cx='15.5' cy='32' rx='4.2' ry='1.7' transform='rotate(-88 15.5 32)'/%3E%3Cellipse cx='16.5' cy='24' rx='4' ry='1.6' transform='rotate(-104 16.5 24)'/%3E%3Cellipse cx='57' cy='48' rx='4.2' ry='1.7' transform='rotate(58 57 48)'/%3E%3Cellipse cx='59.5' cy='40' rx='4.2' ry='1.7' transform='rotate(74 59.5 40)'/%3E%3Cellipse cx='60.5' cy='32' rx='4.2' ry='1.7' transform='rotate(88 60.5 32)'/%3E%3Cellipse cx='59.5' cy='24' rx='4' ry='1.6' transform='rotate(104 59.5 24)'/%3E%3Cpath d='M38 6 l2.1 4.6 4.9 .5 -3.7 3.3 1.1 4.9 -4.3-2.6 -4.3 2.6 1.1-4.9 -3.7-3.3 4.9-.5z'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Reusable full-width meander divider band */
+.meander-divider {
+  height: 18px;
+  background: var(--meander) center / 54px 18px repeat-x;
+  opacity: 0.5;
 }
 
 /* ===================================================================
@@ -1675,6 +1723,11 @@ h4 { font-size: clamp(1.1rem, 1.5vw + 0.2rem, 1.5rem); }
     grid-template-columns: 1fr;
   }
 
+  /* When stacked, show the form first (heading says "fill in the details below"),
+     then the contact info. #contact anchor stays intact via DOM order. */
+  .reservation__grid > .reveal--right { order: -1; }
+  .reservation__info { order: 0; margin-top: var(--space-2xl); }
+
   .footer__grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1848,4 +1901,134 @@ h4 { font-size: clamp(1.1rem, 1.5vw + 0.2rem, 1.5rem); }
   0% { width: 0; margin-left: 0; }
   50% { width: 70%; margin-left: 15%; }
   100% { width: 0; margin-left: 100%; }
+}
+
+/* ===================================================================
+   20. GREEK REVIVAL THEME LAYER
+   Marble · Gold · Meander · Laurel · Fluted Columns
+   =================================================================== */
+
+/* ---- Fluted Doric columns framing the hero ---- */
+.hero__column {
+  width: 46px;
+  opacity: 0.22;
+  /* Vertical fluting: alternating light/shadow grooves carved into marble */
+  background:
+    repeating-linear-gradient(90deg,
+      rgba(255, 250, 235, 0.28) 0px,
+      rgba(255, 250, 235, 0.28) 2px,
+      rgba(120, 96, 40, 0.30) 5px,
+      rgba(255, 250, 235, 0.10) 8px
+    );
+  border-left: 1px solid rgba(212, 175, 90, 0.4);
+  border-right: 1px solid rgba(212, 175, 90, 0.4);
+}
+
+/* Doric capital (abacus + echinus) */
+.hero__column::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -12px;
+  right: -12px;
+  height: 26px;
+  background: linear-gradient(180deg, rgba(212,175,90,0.35), rgba(212,175,90,0.08));
+  border-bottom: 2px solid rgba(212, 175, 90, 0.45);
+  box-shadow: 0 3px 0 -1px rgba(212,175,90,0.25);
+}
+
+/* Column base */
+.hero__column::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -12px;
+  right: -12px;
+  height: 26px;
+  background: linear-gradient(0deg, rgba(212,175,90,0.35), rgba(212,175,90,0.08));
+  border-top: 2px solid rgba(212, 175, 90, 0.45);
+}
+
+/* ---- Gold meander underline beneath the hero title ---- */
+.hero__title {
+  position: relative;
+}
+.hero__title::after {
+  content: '';
+  display: block;
+  width: 180px;
+  height: 14px;
+  margin: var(--space-lg) auto 0;
+  background: var(--meander) center / 48px 14px repeat-x;
+  opacity: 0.9;
+}
+
+/* ---- Temple pediment crowning centered section headers ---- */
+.services__header .section-label,
+.gallery-hero__content .section-label {
+  justify-content: center;
+}
+
+.services__header {
+  position: relative;
+}
+.services__header::before {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 30px;
+  margin: 0 auto var(--space-lg);
+  /* Simplified temple pediment: triangle on entablature */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='30' viewBox='0 0 64 30'%3E%3Cg fill='none' stroke='%23C9A227' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M4 20 L32 4 L60 20 Z'/%3E%3Cpath d='M2 24 h60'/%3E%3Cpath d='M2 28 h60'/%3E%3C/g%3E%3Ccircle cx='32' cy='16' r='2.2' fill='%23C9A227'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.9;
+}
+
+/* ---- Marble service cards with a gilded top rule ---- */
+.service-card {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.6), transparent 40%),
+    var(--bg-card);
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), var(--accent-gold-bright), var(--accent-gold), transparent);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out-expo);
+}
+.service-card:hover::before { opacity: 1; }
+
+/* ---- About image: gilded meander frame ---- */
+.about__image {
+  border-color: rgba(201, 162, 39, 0.35);
+}
+
+/* ---- Refine gold gradients to antique gold everywhere ---- */
+.nav__cta,
+.btn--primary {
+  background: linear-gradient(135deg, var(--accent-gold-bright), var(--accent-gold) 55%, var(--accent-bronze));
+}
+
+/* ---- Nav scrolled: marble frosted glass ---- */
+.nav--scrolled {
+  background-color: rgba(251, 250, 246, 0.92);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.28);
+}
+
+/* ---- Reduced motion: honor user preference ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero__logo { animation: none; }
 }

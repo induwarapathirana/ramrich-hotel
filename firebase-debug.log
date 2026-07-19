@@ -1,0 +1,42 @@
+[debug] [2026-06-06T14:47:13.663Z] ----------------------------------------------------------------------
+[debug] [2026-06-06T14:47:13.666Z] Command:       /usr/local/bin/node /Users/induwarapathirana/.npm/_npx/ba4f1959e38407b5/node_modules/.bin/firebase deploy --only hosting
+[debug] [2026-06-06T14:47:13.666Z] CLI Version:   15.19.1
+[debug] [2026-06-06T14:47:13.666Z] Platform:      darwin
+[debug] [2026-06-06T14:47:13.666Z] Node Version:  v20.15.0
+[debug] [2026-06-06T14:47:13.666Z] Time:          Sat Jun 06 2026 20:17:13 GMT+0530 (India Standard Time)
+[debug] [2026-06-06T14:47:13.666Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-06T14:48:31.713Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-06T14:48:31.716Z] > authorizing via signed-in user (induwara1203@gmail.com)
+[debug] [2026-06-06T14:48:31.716Z] [iam] checking project hotel-ramrich-banquets for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-06-06T14:48:31.721Z] Checked if tokens are valid: true, expires at: 1780760193685
+[debug] [2026-06-06T14:48:31.721Z] Checked if tokens are valid: true, expires at: 1780760193685
+[debug] [2026-06-06T14:48:31.722Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/hotel-ramrich-banquets:testIamPermissions [none]
+[debug] [2026-06-06T14:48:31.722Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/hotel-ramrich-banquets:testIamPermissions  x-goog-user-project=hotel-ramrich-banquets
+[debug] [2026-06-06T14:48:31.723Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/hotel-ramrich-banquets:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-06T14:48:34.101Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/hotel-ramrich-banquets:testIamPermissions 200
+[debug] [2026-06-06T14:48:34.101Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/hotel-ramrich-banquets:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-06T14:48:34.102Z] Checked if tokens are valid: true, expires at: 1780760193685
+[debug] [2026-06-06T14:48:34.102Z] Checked if tokens are valid: true, expires at: 1780760193685
+[debug] [2026-06-06T14:48:34.103Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/hotel-ramrich-banquets [none]
+[debug] [2026-06-06T14:48:35.878Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/hotel-ramrich-banquets 200
+[debug] [2026-06-06T14:48:35.878Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/hotel-ramrich-banquets {"projectId":"hotel-ramrich-banquets","projectNumber":"990821120025","displayName":"Hotel Ramrich","name":"projects/hotel-ramrich-banquets","resources":{"hostingSite":"hotel-ramrich-banquets"},"state":"ACTIVE","etag":"1_0f98af67-88c9-40f5-bd9f-6b2566a8627a"}
+[info] 
+[info] === Deploying to 'hotel-ramrich-banquets'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-06-06T14:48:35.885Z] Checked if tokens are valid: true, expires at: 1780760193685
+[debug] [2026-06-06T14:48:35.885Z] Checked if tokens are valid: true, expires at: 1780760193685
+[debug] [2026-06-06T14:48:35.885Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/hotel-ramrich-banquets/sites/hotel-ramrich-banquets [none]
+[debug] [2026-06-06T14:48:37.979Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/hotel-ramrich-banquets/sites/hotel-ramrich-banquets 200
+[debug] [2026-06-06T14:48:37.979Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/hotel-ramrich-banquets/sites/hotel-ramrich-banquets {"name":"projects/hotel-ramrich-banquets/sites/hotel-ramrich-banquets","defaultUrl":"https://hotel-ramrich-banquets.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-06-06T14:48:37.987Z] Checked if tokens are valid: true, expires at: 1780760193685
+[debug] [2026-06-06T14:48:37.987Z] Checked if tokens are valid: true, expires at: 1780760193685
+[debug] [2026-06-06T14:48:37.987Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/hotel-ramrich-banquets/versions [none]
+[debug] [2026-06-06T14:48:37.987Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/hotel-ramrich-banquets/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-06-06T14:48:39.081Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/hotel-ramrich-banquets/versions 200
+[debug] [2026-06-06T14:48:39.081Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/hotel-ramrich-banquets/versions {"name":"projects/990821120025/sites/hotel-ramrich-banquets/versions/0f1f2d4ce5907f1e","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[hotel-ramrich-banquets]: beginning deploy... 
+[info] i  hosting[hotel-ramrich-banquets]: found 117 files in . 
+[debug] [2026-06-06T14:48:39.304Z] [hosting] uploading with 200 concurrency
+[info] i  hosting: hashing files [40/117] (34%) 

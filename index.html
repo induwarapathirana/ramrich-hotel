@@ -6,6 +6,13 @@
   <title>Hotel Ramrich | Hotel & Banquets — Ekala, Ja-ela, Sri Lanka</title>
   <meta name="description" content="Hotel RamRich and Banquets — one of the largest banquet halls in Sri Lanka. Three magnificent halls for weddings, conferences, parties, and photoshoots, featuring elegant classical architecture and luxury interiors.">
   <link rel="icon" type="image/svg+xml" href="ramrich.svg">
+
+  <!-- Fonts: preconnect + async load (non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -51,7 +58,7 @@
   <!-- ========== HERO SECTION ========== -->
   <section class="hero" id="hero">
     <div class="hero__video-wrap">
-      <video class="hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true" role="none">
+      <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="coverimage.webp" aria-hidden="true" role="none">
         <source src="ramrich.mp4" type="video/mp4">
       </video>
     </div>
@@ -89,7 +96,7 @@
     <div class="container">
       <div class="about__grid">
         <div class="about__image-block reveal reveal--left">
-          <img src="coverimage.jpg" alt="Hotel Ramrich Ekala — Aerial view of the grand venue with classical columns and fountains" class="about__image">
+          <img src="coverimage.webp" alt="Hotel Ramrich Ekala — Aerial view of the grand venue with classical columns and fountains" class="about__image">
           <div class="about__image-frame" aria-hidden="true"></div>
         </div>
 
@@ -118,11 +125,11 @@
     </div>
   </section>
 
-  <!-- ========== LUXURY ELEGANT DIVIDER ========== -->
-  <div class="laurel-divider" aria-hidden="true" style="background: var(--sand-100); padding-block: var(--space-3xl);">
-    <div class="divider-line" style="width: 150px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);"></div>
-    <div class="divider-crest" style="color: var(--accent-gold); font-size: 1.5rem; letter-spacing: 0.2em; font-family: var(--font-heading);">✦ ✦ ✦</div>
-    <div class="divider-line" style="width: 150px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);"></div>
+  <!-- ========== LAUREL DIVIDER ========== -->
+  <div class="laurel-divider" aria-hidden="true">
+    <div class="divider-line"></div>
+    <div class="divider-crest"></div>
+    <div class="divider-line"></div>
   </div>
 
   <!-- ========== VENUES / SERVICES ========== -->
@@ -138,7 +145,7 @@
         <!-- Wedding Venue -->
         <div class="service-card reveal reveal--delay-1">
           <div class="service-card__image-wrap">
-            <img src="weddingcouple-1.jpg" alt="Romantic wedding setting at Hotel Ramrich with lush landscaped gardens" class="service-card__image" loading="lazy">
+            <img src="weddingcouple-1.webp" alt="Romantic wedding setting at Hotel Ramrich with lush landscaped gardens" class="service-card__image" loading="lazy">
             <div class="service-card__image-overlay"></div>
             <div class="service-card__icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -159,7 +166,7 @@
         <!-- Grand Halls -->
         <div class="service-card reveal reveal--delay-2">
           <div class="service-card__image-wrap">
-            <img src="hall-1.jpg" alt="Luxurious grand ballroom with crystal chandelier and gold-blue carpet" class="service-card__image" loading="lazy">
+            <img src="hall-1.webp" alt="Luxurious grand ballroom with crystal chandelier and gold-blue carpet" class="service-card__image" loading="lazy">
             <div class="service-card__image-overlay"></div>
             <div class="service-card__icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -180,7 +187,7 @@
         <!-- Conferences -->
         <div class="service-card reveal reveal--delay-3">
           <div class="service-card__image-wrap">
-            <img src="conferences-1.jpg" alt="Professional conference setup at Hotel Ramrich" class="service-card__image" loading="lazy">
+            <img src="conferences-1.webp" alt="Professional conference setup at Hotel Ramrich" class="service-card__image" loading="lazy">
             <div class="service-card__image-overlay"></div>
             <div class="service-card__icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -201,7 +208,7 @@
         <!-- Parties & Celebrations -->
         <div class="service-card reveal reveal--delay-4">
           <div class="service-card__image-wrap">
-            <img src="parties-1.jpg" alt="Party venue with vibrant decorations" class="service-card__image" loading="lazy">
+            <img src="parties-1.webp" alt="Party venue with vibrant decorations" class="service-card__image" loading="lazy">
             <div class="service-card__image-overlay"></div>
             <div class="service-card__icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -224,7 +231,7 @@
 
   <!-- ========== PARALLAX BANNER ========== -->
   <div class="parallax-banner">
-    <div class="parallax-banner__bg" style="background-image: url('weddingdance-floor-3.jpg');"></div>
+    <div class="parallax-banner__bg" style="background-image: url('weddingdance-floor-3.webp');"></div>
     <div class="parallax-banner__overlay"></div>
     <div class="parallax-banner__content reveal">
       <p class="section-label" style="justify-content: center; color: rgba(255,255,255,0.7);">
@@ -249,19 +256,19 @@
 
       <div class="gallery-grid" style="max-width: 1000px; margin-inline: auto; grid-template-columns: repeat(3, 1fr);">
         <div class="gallery-item reveal reveal--scale reveal--delay-1">
-          <img src="photoshoots-0.jpg" alt="Photoshoot location with classical architecture" loading="lazy">
+          <img src="photoshoots-0.webp" alt="Photoshoot location with classical architecture" loading="lazy">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Garden Path</span>
           </div>
         </div>
         <div class="gallery-item reveal reveal--scale reveal--delay-2">
-          <img src="photoshoots-1.jpg" alt="Scenic photoshoot backdrop" loading="lazy">
+          <img src="photoshoots-1.webp" alt="Scenic photoshoot backdrop" loading="lazy">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Sculpture Garden</span>
           </div>
         </div>
         <div class="gallery-item reveal reveal--scale reveal--delay-3">
-          <img src="photoshoots-2.jpg" alt="Wedding photoshoot location" loading="lazy">
+          <img src="photoshoots-2.webp" alt="Wedding photoshoot location" loading="lazy">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Grand Entrance</span>
           </div>
@@ -488,9 +495,9 @@
   </footer>
 
   <!-- Firebase Compatibility SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js" defer></script>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
