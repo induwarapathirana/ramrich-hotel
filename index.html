@@ -55,6 +55,65 @@
     </div>
   </nav>
 
+  <!-- ========== MOBILE BOTTOM TAB BAR ========== -->
+  <nav class="mobile-tab-bar" id="mobileTabBar" aria-label="Mobile navigation">
+    <!-- Home -->
+    <a href="#hero" class="mobile-tab mobile-tab--active" data-tab="home" aria-label="Home">
+      <div class="mobile-tab__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
+          <path d="M9 21V12h6v9"/>
+        </svg>
+      </div>
+      <span class="mobile-tab__label">Home</span>
+    </a>
+    <!-- Venues -->
+    <a href="#venues" class="mobile-tab" data-tab="venues" aria-label="Venues">
+      <div class="mobile-tab__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 7L12 2L22 7H2Z"/>
+          <path d="M3 7V9H21V7"/>
+          <path d="M5 9V19M9 9V19M15 9V19M19 9V19"/>
+          <path d="M3 19H21M2 22H22"/>
+        </svg>
+      </div>
+      <span class="mobile-tab__label">Venues</span>
+    </a>
+    <!-- Gallery -->
+    <a href="gallery.html" class="mobile-tab" data-tab="gallery" aria-label="Gallery">
+      <div class="mobile-tab__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </div>
+      <span class="mobile-tab__label">Gallery</span>
+    </a>
+    <!-- Reserve -->
+    <a href="#reservation" class="mobile-tab" data-tab="reserve" aria-label="Reserve">
+      <div class="mobile-tab__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+        </svg>
+      </div>
+      <span class="mobile-tab__label">Reserve</span>
+    </a>
+    <!-- Contact -->
+    <a href="#contact" class="mobile-tab" data-tab="contact" aria-label="Contact">
+      <div class="mobile-tab__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.07 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1.05.37 2.08.72 3.07a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.99.35 2 .59 3.07.72A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </div>
+      <span class="mobile-tab__label">Contact</span>
+    </a>
+  </nav>
+
   <!-- ========== HERO SECTION ========== -->
   <section class="hero" id="hero">
     <div class="hero__video-wrap">
@@ -64,11 +123,6 @@
     </div>
     <div class="hero__overlay"></div>
 
-    <!-- Decorative classical column overlays -->
-    <div class="hero__columns" aria-hidden="true">
-      <div class="hero__column hero__column--left"></div>
-      <div class="hero__column hero__column--right"></div>
-    </div>
 
     <div class="hero__content">
       <img src="ramrich.svg" alt="Hotel Ramrich Logo" class="hero__logo">
@@ -128,7 +182,64 @@
   <!-- ========== LAUREL DIVIDER ========== -->
   <div class="laurel-divider" aria-hidden="true">
     <div class="divider-line"></div>
-    <div class="divider-crest"></div>
+    <div class="divider-crest">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" width="160" height="90" fill="none" class="crest-svg">
+        <!-- Refined Classical Anthemion Palmette (5 symmetrical petals) -->
+        <!-- Centre petal -->
+        <path d="M80 48 C78.5 40 78 30 80 20 C82 30 81.5 40 80 48 Z" fill="var(--accent-gold,#C9A227)"/>
+        <!-- Petal L1 -->
+        <path d="M80 47 C75 40 72 30 74 21 C77 30 78.5 39 80 47 Z" fill="var(--accent-gold,#C9A227)"/>
+        <!-- Petal R1 -->
+        <path d="M80 47 C85 40 88 30 86 21 C83 30 81.5 39 80 47 Z" fill="var(--accent-gold,#C9A227)"/>
+        <!-- Petal L2 -->
+        <path d="M80 47 C71 42 65 33 69 23 C73 32 76 41 80 47 Z" fill="var(--accent-gold,#C9A227)"/>
+        <!-- Petal R2 -->
+        <path d="M80 47 C89 42 95 33 91 23 C87 32 84 41 80 47 Z" fill="var(--accent-gold,#C9A227)"/>
+        <!-- Calyx base rectangle -->
+        <rect x="72" y="47" width="16" height="4" rx="1" fill="var(--accent-gold,#C9A227)"/>
+        <!-- Left volute scroll -->
+        <path d="M72 49 C65 49 60 53 62 58 C64 62 69 61 70 56 C71 51 67 49 64 51" stroke="var(--accent-gold,#C9A227)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <!-- Right volute scroll -->
+        <path d="M88 49 C95 49 100 53 98 58 C96 62 91 61 90 56 C89 51 93 49 96 51" stroke="var(--accent-gold,#C9A227)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+
+        <!-- Left laurel stem -->
+        <path d="M80 83 C62 80 34 64 30 36 C29 25 33 15 39 8" stroke="var(--accent-gold,#C9A227)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- Right laurel stem -->
+        <path d="M80 83 C98 80 126 64 130 36 C131 25 127 15 121 8" stroke="var(--accent-gold,#C9A227)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+        <!-- Left laurel leaves (5 pairs, evenly spaced along stem) -->
+        <ellipse cx="31" cy="36" rx="6" ry="3" transform="rotate(-20 31 36)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="36" cy="37" rx="6" ry="2.5" transform="rotate(30 36 37)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="33" cy="48" rx="6" ry="3" transform="rotate(-25 33 48)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="39" cy="49" rx="6" ry="2.5" transform="rotate(25 39 49)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="42" cy="60" rx="6" ry="3" transform="rotate(-30 42 60)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="48" cy="60" rx="5.5" ry="2.5" transform="rotate(20 48 60)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="57" cy="71" rx="5.5" ry="2.5" transform="rotate(-35 57 71)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="62" cy="70" rx="5" ry="2.5" transform="rotate(15 62 70)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="35" cy="24" rx="5.5" ry="2.5" transform="rotate(-15 35 24)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="39" cy="14" rx="5" ry="2.5" transform="rotate(10 39 14)" fill="var(--accent-gold,#C9A227)"/>
+
+        <!-- Right laurel leaves (mirror) -->
+        <ellipse cx="129" cy="36" rx="6" ry="3" transform="rotate(20 129 36)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="124" cy="37" rx="6" ry="2.5" transform="rotate(-30 124 37)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="127" cy="48" rx="6" ry="3" transform="rotate(25 127 48)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="121" cy="49" rx="6" ry="2.5" transform="rotate(-25 121 49)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="118" cy="60" rx="6" ry="3" transform="rotate(30 118 60)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="112" cy="60" rx="5.5" ry="2.5" transform="rotate(-20 112 60)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="103" cy="71" rx="5.5" ry="2.5" transform="rotate(35 103 71)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="98" cy="70" rx="5" ry="2.5" transform="rotate(-15 98 70)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="125" cy="24" rx="5.5" ry="2.5" transform="rotate(15 125 24)" fill="var(--accent-gold,#C9A227)"/>
+        <ellipse cx="121" cy="14" rx="5" ry="2.5" transform="rotate(-10 121 14)" fill="var(--accent-gold,#C9A227)"/>
+
+        <!-- 8-point Hellenic star apex -->
+        <path d="M80 5 L81.5 9.5 L86.5 11 L81.5 12.5 L80 17 L78.5 12.5 L73.5 11 L78.5 9.5 Z" fill="var(--accent-gold,#C9A227)"/>
+        <circle cx="80" cy="11" r="1.2" fill="#FFFDF8"/>
+
+        <!-- Base medallion -->
+        <circle cx="80" cy="83" r="2.5" fill="var(--accent-gold,#C9A227)"/>
+        <circle cx="80" cy="83" r="4.5" stroke="var(--accent-gold,#C9A227)" stroke-width="0.8"/>
+      </svg>
+    </div>
     <div class="divider-line"></div>
   </div>
 
@@ -147,9 +258,11 @@
           <div class="service-card__image-wrap">
             <img src="weddingcouple-1.webp" alt="Romantic wedding setting at Hotel Ramrich with lush landscaped gardens" class="service-card__image" loading="lazy">
             <div class="service-card__image-overlay"></div>
-            <div class="service-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            <div class="service-card__icon" aria-label="Weddings">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="13" r="5.5"/>
+                <circle cx="15" cy="13" r="5.5"/>
+                <path d="M12 3L12.8 5.8L15.5 6.5L12.8 7.2L12 10L11.2 7.2L8.5 6.5L11.2 5.8Z" fill="currentColor"/>
               </svg>
             </div>
           </div>
@@ -168,9 +281,12 @@
           <div class="service-card__image-wrap">
             <img src="hall-1.webp" alt="Luxurious grand ballroom with crystal chandelier and gold-blue carpet" class="service-card__image" loading="lazy">
             <div class="service-card__image-overlay"></div>
-            <div class="service-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 21h18M3 7v14M21 7v14M6 7V4h12v3M9 21v-4h6v4"/>
+            <div class="service-card__icon" aria-label="Melody Ballroom">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 7L12 2L22 7H2Z"/>
+                <path d="M3 7V9H21V7"/>
+                <path d="M5 9V19M9 9V19M15 9V19M19 9V19"/>
+                <path d="M3 19H21M2 22H22"/>
               </svg>
             </div>
           </div>
@@ -189,9 +305,12 @@
           <div class="service-card__image-wrap">
             <img src="conferences-1.webp" alt="Professional conference setup at Hotel Ramrich" class="service-card__image" loading="lazy">
             <div class="service-card__image-overlay"></div>
-            <div class="service-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 14l9-5-9-5-9 5 9 5zM12 14v7M3 9v7l9 5 9-5V9"/>
+            <div class="service-card__icon" aria-label="Conferences">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 17V5a2 2 0 0 0-2-2H4"/>
+                <path d="M8 21h11a2 2 0 0 0 2-2v-2"/>
+                <path d="M4 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2"/>
+                <path d="M7 8h8M7 12h8M7 16h5"/>
               </svg>
             </div>
           </div>
@@ -210,9 +329,13 @@
           <div class="service-card__image-wrap">
             <img src="parties-1.webp" alt="Party venue with vibrant decorations" class="service-card__image" loading="lazy">
             <div class="service-card__image-overlay"></div>
-            <div class="service-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            <div class="service-card__icon" aria-label="Celebrations">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18C5 18 4 14 4 10C4 5 6 3 7 2"/>
+                <path d="M15 18C19 18 20 14 20 10C20 5 18 3 17 2"/>
+                <path d="M6 5H18"/>
+                <path d="M9 5V17M12 5V18M15 5V17"/>
+                <path d="M8 18C8 20.5 9.8 22 12 22C14.2 22 16 20.5 16 18H8Z"/>
               </svg>
             </div>
           </div>
@@ -355,10 +478,11 @@
               Reservation Request
             </h3>
 
+            <!-- Row 1: Full Name + Phone -->
             <div class="form__row">
               <div class="form__group">
                 <label for="fullName" class="form__label">Full Name</label>
-                <input type="text" id="fullName" class="form__input" placeholder="Your name" autocomplete="name" required>
+                <input type="text" id="fullName" class="form__input" placeholder="Your full name" autocomplete="name" required>
               </div>
               <div class="form__group">
                 <label for="phone" class="form__label">Phone Number</label>
@@ -366,12 +490,12 @@
               </div>
             </div>
 
-            <div class="form__group">
-              <label for="email" class="form__label">Email Address</label>
-              <input type="email" id="email" class="form__input" placeholder="your@email.com" autocomplete="email" required>
-            </div>
-
+            <!-- Row 2: Email + Event Type -->
             <div class="form__row">
+              <div class="form__group">
+                <label for="email" class="form__label">Email Address</label>
+                <input type="email" id="email" class="form__input" placeholder="your@email.com" autocomplete="email" required>
+              </div>
               <div class="form__group">
                 <label for="eventType" class="form__label">Event Type</label>
                 <select id="eventType" class="form__select" required>
@@ -384,13 +508,14 @@
                   <option value="other">Other</option>
                 </select>
               </div>
+            </div>
+
+            <!-- Row 3: Preferred Date + Guest Count -->
+            <div class="form__row">
               <div class="form__group">
                 <label for="eventDate" class="form__label">Preferred Date</label>
                 <input type="date" id="eventDate" class="form__input" required>
               </div>
-            </div>
-
-            <div class="form__row">
               <div class="form__group">
                 <label for="guestCount" class="form__label">Estimated Guests</label>
                 <select id="guestCount" class="form__select">
@@ -402,19 +527,22 @@
                   <option value="351-500">351 — 500+ Guests</option>
                 </select>
               </div>
-              <div class="form__group">
-                <label for="hall" class="form__label">Preferred Hall</label>
-                <select id="hall" class="form__select">
-                  <option value="" disabled selected>Select hall</option>
-                  <option value="hall-melody">Melody Ballroom</option>
-                  <option value="hall-elina">Elina Banquet Hall</option>
-                  <option value="hall-aragon">Aragon Banquet Hall</option>
-                  <option value="outdoor">Outdoor Garden</option>
-                  <option value="any">No Preference</option>
-                </select>
-              </div>
             </div>
 
+            <!-- Row 4: Preferred Hall (full-width) -->
+            <div class="form__group">
+              <label for="hall" class="form__label">Preferred Hall</label>
+              <select id="hall" class="form__select">
+                <option value="" disabled selected>Select preferred hall</option>
+                <option value="hall-melody">Melody Ballroom (up to 400 guests)</option>
+                <option value="hall-aragon">Aragon Banquet Hall (up to 250 guests)</option>
+                <option value="hall-elina">Elina Banquet Hall (up to 150 guests)</option>
+                <option value="outdoor">Outdoor Garden</option>
+                <option value="any">No Preference</option>
+              </select>
+            </div>
+
+            <!-- Row 5: Message (full-width) -->
             <div class="form__group">
               <label for="message" class="form__label">Additional Details</label>
               <textarea id="message" class="form__textarea" placeholder="Tell us about your event requirements, special requests, or any questions..."></textarea>

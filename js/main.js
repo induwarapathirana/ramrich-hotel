@@ -533,4 +533,57 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   animateCounters();
+
+  // ─────────────────────────────────────
+  // 10. MOBILE BOTTOM TAB BAR — Active State on Scroll
+  // ─────────────────────────────────────
+  const mobileTabBar = document.getElementById('mobileTabBar');
+  if (mobileTabBar) {
+    const tabs = mobileTabBar.querySelectorAll('.mobile-tab[data-tab]');
+
+    // Section → tab mapping (by data-tab value)
+    const sectionTabMap = [
+      { sectionId: 'hero',        tab: 'home'    },
+      { sectionId: 'about',       tab: 'home'    },
+      { sectionId: 'venues',      tab: 'venues'  },
+      { sectionId: 'photoshoots', tab: 'venues'  },
+      { sectionId: 'reservation', tab: 'reserve' },
+      { sectionId: 'contact',     tab: 'contact' },
+    ];
+
+    const setActiveTab = (tabName) => {
+      tabs.forEach(tab => {
+        const isActive = tab.dataset.tab === tabName;
+        tab.classList.toggle('mobile-tab--active', isActive);
+      });
+    };
+
+    // Tap feedback — bounce animation via class
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tab.classList.add('mobile-tab--tapped');
+        setTimeout(() => tab.classList.remove('mobile-tab--tapped'), 300);
+      });
+    });
+
+    // Scroll observer — update active tab based on visible section
+    if ('IntersectionObserver' in window) {
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const match = sectionTabMap.find(m => m.sectionId === entry.target.id);
+            if (match) setActiveTab(match.tab);
+          }
+        });
+      }, {
+        threshold: 0.35,
+        rootMargin: '0px 0px -20% 0px'
+      });
+
+      sectionTabMap.forEach(({ sectionId }) => {
+        const el = document.getElementById(sectionId);
+        if (el) sectionObserver.observe(el);
+      });
+    }
+  }
 });
