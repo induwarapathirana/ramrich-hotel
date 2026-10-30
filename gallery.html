@@ -2,36 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Gallery — Hotel Ramrich Ekala</title>
   <meta name="description" content="Explore the stunning gallery of Hotel Ramrich Ekala — weddings, grand halls, conferences, parties, and photoshoots in a premier luxury venue.">
+  <meta name="theme-color" content="#081A2E">
   <link rel="icon" type="image/svg+xml" href="ramrich.svg">
 
-  <!-- Fonts: preconnect + async load (non-render-blocking) -->
+
+  <!-- Fonts: preconnect + async load (non-render-blocking). GFS Didot is subset to the few Greek glyphs used. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap&text=%CE%91%CE%92%CE%93%CE%94%CE%95%CE%96%CE%9E%CE%99%CE%9D%CA%B9" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript>
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- ========== PAGE LOADER ========== -->
-  <div class="page-loader" id="pageLoader">
-    <div class="page-loader__inner">
-      <img src="ramrich.svg" alt="" class="page-loader__logo">
-      <div class="page-loader__bar">
-        <div class="page-loader__bar-fill"></div>
-      </div>
-    </div>
-  </div>
-
   <!-- ========== NAVIGATION ========== -->
   <nav class="nav nav--scrolled" id="mainNav">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-        <img src="ramrich.svg" alt="Hotel Ramrich Logo">
+        <img src="ramrich.svg" alt="Hotel Ramrich Logo" width="40" height="36">
         <div class="nav__logo-text">
           Ramrich
           <span>Ekala</span>
@@ -39,12 +32,11 @@
       </a>
 
       <div class="nav__links" id="navLinks">
-        <a href="index.html#about" class="nav__link">About</a>
-        <a href="index.html#venues" class="nav__link">Venues</a>
+        <a href="index.html#about" class="nav__link">The House</a>
+        <a href="index.html#venues" class="nav__link">Halls</a>
         <a href="gallery.html" class="nav__link nav__link--active">Gallery</a>
-        <a href="index.html#reservation" class="nav__link">Reservations</a>
         <a href="index.html#contact" class="nav__link">Contact</a>
-        <a href="index.html#reservation" class="nav__cta">Book Now</a>
+        <a href="index.html#reservation" class="nav__cta">Reserve</a>
       </div>
 
       <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
@@ -57,56 +49,50 @@
 
   <!-- ========== MOBILE BOTTOM TAB BAR ========== -->
   <nav class="mobile-tab-bar" id="mobileTabBar" aria-label="Mobile navigation">
-    <!-- Home -->
     <a href="index.html" class="mobile-tab" data-tab="home" aria-label="Home">
       <div class="mobile-tab__icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
           <path d="M9 21V12h6v9"/>
         </svg>
       </div>
       <span class="mobile-tab__label">Home</span>
     </a>
-    <!-- Venues -->
-    <a href="index.html#venues" class="mobile-tab" data-tab="venues" aria-label="Venues">
+    <a href="index.html#venues" class="mobile-tab" data-tab="venues" aria-label="Halls">
       <div class="mobile-tab__icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <path d="M2 7L12 2L22 7H2Z"/>
           <path d="M3 7V9H21V7"/>
           <path d="M5 9V19M9 9V19M15 9V19M19 9V19"/>
           <path d="M3 19H21M2 22H22"/>
         </svg>
       </div>
-      <span class="mobile-tab__label">Venues</span>
+      <span class="mobile-tab__label">Halls</span>
     </a>
-    <!-- Gallery -->
     <a href="gallery.html" class="mobile-tab mobile-tab--active" data-tab="gallery" aria-label="Gallery">
       <div class="mobile-tab__icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18"/>
           <circle cx="8.5" cy="8.5" r="1.5"/>
           <polyline points="21 15 16 10 5 21"/>
         </svg>
       </div>
       <span class="mobile-tab__label">Gallery</span>
     </a>
-    <!-- Reserve -->
     <a href="index.html#reservation" class="mobile-tab" data-tab="reserve" aria-label="Reserve">
       <div class="mobile-tab__icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18"/>
           <line x1="16" y1="2" x2="16" y2="6"/>
           <line x1="8" y1="2" x2="8" y2="6"/>
           <line x1="3" y1="10" x2="21" y2="10"/>
-          <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
         </svg>
       </div>
       <span class="mobile-tab__label">Reserve</span>
     </a>
-    <!-- Contact -->
     <a href="index.html#contact" class="mobile-tab" data-tab="contact" aria-label="Contact">
       <div class="mobile-tab__icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.07 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1.05.37 2.08.72 3.07a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.99.35 2 .59 3.07.72A2 2 0 0 1 22 16.92z"/>
         </svg>
       </div>
@@ -114,236 +100,238 @@
     </a>
   </nav>
 
-  <!-- ========== GALLERY HERO ========== -->
-  <section class="gallery-hero">
-    <div class="gallery-hero__pattern" aria-hidden="true"></div>
-    <div class="gallery-hero__content">
-      <p class="section-label" style="justify-content: center; color: rgba(255,255,255,0.6); margin-bottom: 16px;">
-        <span class="divider-line" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);"></span>
-        Visual Chronicles
-        <span class="divider-line" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);"></span>
-      </p>
-      <h1>Our Gallery</h1>
-      <p>A collection of legendary moments captured within the halls and gardens of Hotel Ramrich.</p>
-    </div>
-  </section>
+  <main>
+    <!-- ========== GALLERY HERO ========== -->
+    <section class="page-hero">
+      <p class="eyebrow"><span class="eyebrow__num greek">Ζʹ</span>Visual Chronicles</p>
+      <h1>The Gallery</h1>
+      <p>Moments of legend, captured within the halls and gardens of Hotel Ramrich.</p>
+      <div class="frieze" aria-hidden="true"></div>
+    </section>
 
-  <!-- ========== GALLERY FILTERS ========== -->
-  <div class="container">
-    <div class="gallery-filters" id="galleryFilters">
-      <button class="gallery-filter gallery-filter--active" data-filter="all">All</button>
-      <button class="gallery-filter" data-filter="halls">Grand Halls</button>
-      <button class="gallery-filter" data-filter="weddings">Weddings</button>
-      <button class="gallery-filter" data-filter="conferences">Conferences</button>
-      <button class="gallery-filter" data-filter="parties">Parties & Birthdays</button>
-      <button class="gallery-filter" data-filter="photoshoots">Photoshoots</button>
+    <!-- ========== GALLERY FILTERS ========== -->
+    <div class="container">
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="gallery-filter gallery-filter--active" data-filter="all">All</button>
+        <button class="gallery-filter" data-filter="halls">Grand Halls</button>
+        <button class="gallery-filter" data-filter="weddings">Weddings</button>
+        <button class="gallery-filter" data-filter="conferences">Conferences</button>
+        <button class="gallery-filter" data-filter="parties">Parties &amp; Birthdays</button>
+        <button class="gallery-filter" data-filter="photoshoots">Photoshoots</button>
+      </div>
     </div>
-  </div>
 
-  <!-- ========== GALLERY GRID ========== -->
-  <section class="section" id="gallerySection">
-    <div class="container container--wide">
-      <div class="gallery-grid" id="galleryGrid">
+    <!-- ========== GALLERY GRID ========== -->
+    <section class="section" id="gallerySection" style="padding-top: 32px;">
+      <div class="container container--wide">
+        <div class="gallery-grid" id="galleryGrid">
 
         <!-- ===== HALLS ===== -->
-        <div class="gallery-item reveal reveal--scale" data-category="halls">
-          <img src="hall-1.webp" alt="Grand Hall I — Crystal chandelier ballroom with gold and blue decor" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="halls">
+          <img src="hall-1.webp" srcset="hall-1-800.webp 800w, hall-1.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Grand Hall I — Crystal chandelier ballroom with gold and blue decor" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Grand Hall I</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="halls">
-          <img src="hall-1-1.webp" alt="Grand Hall I — Alternate angle showing full seating arrangement" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="halls">
+          <img src="hall-1-1.webp" srcset="hall-1-1-800.webp 800w, hall-1-1.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Grand Hall I — Alternate angle showing full seating arrangement" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Grand Hall I</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="halls">
-          <img src="hall-2.webp" alt="Grand Hall II — Elegant event setup" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="halls">
+          <img src="hall-2.webp" srcset="hall-2-800.webp 800w, hall-2.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Grand Hall II — Elegant event setup" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Grand Hall II</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="halls">
-          <img src="hall-2-1.webp" alt="Grand Hall II — Wide view of the hall" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="halls">
+          <img src="hall-2-1.webp" srcset="hall-2-1-800.webp 800w, hall-2-1.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Grand Hall II — Wide view of the hall" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Grand Hall II</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="halls">
-          <img src="hall-3.webp" alt="Grand Hall III — Premium event space" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="halls">
+          <img src="hall-3.webp" srcset="hall-3-800.webp 800w, hall-3.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Grand Hall III — Premium event space" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Grand Hall III</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="halls">
-          <img src="hall-3-1.webp" alt="Grand Hall III — Beautifully lit interior" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="halls">
+          <img src="hall-3-1.webp" srcset="hall-3-1-800.webp 800w, hall-3-1.webp 1365w" sizes="(max-width: 640px) 50vw, 360px" width="1365" height="2048" alt="Grand Hall III — Beautifully lit interior" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Grand Hall III</span>
           </div>
         </div>
 
         <!-- ===== WEDDINGS ===== -->
-        <div class="gallery-item reveal reveal--scale" data-category="weddings">
-          <img src="weddingcouple-1.webp" alt="Wedding couple in the lush green gardens of Ramrich" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="weddings">
+          <img src="weddingcouple-1.webp" srcset="weddingcouple-1-800.webp 800w, weddingcouple-1.webp 1388w" sizes="(max-width: 640px) 50vw, 360px" width="1388" height="1735" alt="Wedding couple in the lush green gardens of Ramrich" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Wedding — Garden</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="weddings">
-          <img src="wedding-deco-1.webp" alt="Elegant wedding decoration with floral arrangements" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="weddings">
+          <img src="wedding-deco-1.webp" srcset="wedding-deco-1-800.webp 800w, wedding-deco-1.webp 1366w" sizes="(max-width: 640px) 50vw, 360px" width="1366" height="2048" alt="Elegant wedding decoration with floral arrangements" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Wedding Decor</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="weddings">
-          <img src="wedding-dance-floor-1.webp" alt="Wedding dance floor with atmospheric lighting" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="weddings">
+          <img src="wedding-dance-floor-1.webp" srcset="wedding-dance-floor-1-800.webp 800w, wedding-dance-floor-1.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="959" alt="Wedding dance floor with atmospheric lighting" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Dance Floor</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="weddings">
-          <img src="wedding-dance-floor-2.webp" alt="Wedding dance floor setup" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="weddings">
+          <img src="wedding-dance-floor-2.webp" srcset="wedding-dance-floor-2-800.webp 800w, wedding-dance-floor-2.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="959" alt="Wedding dance floor setup" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Dance Floor</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="weddings">
-          <img src="weddingdance-floor-3.webp" alt="Grand wedding dance floor with spectacular lighting" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="weddings">
+          <img src="weddingdance-floor-3.webp" srcset="weddingdance-floor-3-800.webp 800w, weddingdance-floor-3.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Grand wedding dance floor with spectacular lighting" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Grand Dance Floor</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="weddings">
-          <img src="weddingphoto-location-0.webp" alt="Wedding photo location at Ramrich" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="weddings">
+          <img src="weddingphoto-location-0.webp" srcset="weddingphoto-location-0-800.webp 800w, weddingphoto-location-0.webp 853w" sizes="(max-width: 640px) 50vw, 360px" width="853" height="1280" alt="Wedding photo location at Ramrich" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Photo Location</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="weddings">
-          <img src="weddingphoto-location-1.webp" alt="Scenic wedding photo backdrop" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="weddings">
+          <img src="weddingphoto-location-1.webp" srcset="weddingphoto-location-1-800.webp 800w, weddingphoto-location-1.webp 853w" sizes="(max-width: 640px) 50vw, 360px" width="853" height="1280" alt="Scenic wedding photo backdrop" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Photo Location</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="weddings">
-          <img src="weddingphoto-location-2.webp" alt="Garden path wedding photo spot" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="weddings">
+          <img src="weddingphoto-location-2.webp" srcset="weddingphoto-location-2-800.webp 800w, weddingphoto-location-2.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="961" alt="Garden path wedding photo spot" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Photo Location</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="weddings">
-          <img src="weddingphoto-location-3.webp" alt="Elegant garden wedding photoshoot backdrop" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="weddings">
+          <img src="weddingphoto-location-3.webp" srcset="weddingphoto-location-3-800.webp 800w, weddingphoto-location-3.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Elegant garden wedding photoshoot backdrop" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Photo Location</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="weddings">
-          <img src="weddingphoto-location-4.webp" alt="Fountain area wedding photo location" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="weddings">
+          <img src="weddingphoto-location-4.webp" srcset="weddingphoto-location-4-800.webp 800w, weddingphoto-location-4.webp 1365w" sizes="(max-width: 640px) 50vw, 360px" width="1365" height="2048" alt="Fountain area wedding photo location" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Photo Location</span>
           </div>
         </div>
 
         <!-- ===== CONFERENCES ===== -->
-        <div class="gallery-item reveal reveal--scale" data-category="conferences">
-          <img src="conferences-1.webp" alt="Conference setup with professional staging" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="conferences">
+          <img src="conferences-1.webp" srcset="conferences-1-800.webp 800w, conferences-1.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="962" alt="Conference setup with professional staging" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Conference Setup</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="conferences">
-          <img src="conferences-2.webp" alt="Large conference hall with modern facilities" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="conferences">
+          <img src="conferences-2.webp" srcset="conferences-2-800.webp 800w, conferences-2.webp 1365w" sizes="(max-width: 640px) 50vw, 360px" width="1365" height="2048" alt="Large conference hall with modern facilities" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Conference Hall</span>
           </div>
         </div>
 
         <!-- ===== PARTIES & BIRTHDAYS ===== -->
-        <div class="gallery-item reveal reveal--scale" data-category="parties">
-          <img src="parties-1.webp" alt="Party venue with vibrant decorations" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="parties">
+          <img src="parties-1.webp" srcset="parties-1-800.webp 800w, parties-1.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Party venue with vibrant decorations" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Party Venue</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="parties">
-          <img src="parties-4.webp" alt="Celebration event at Ramrich" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="parties">
+          <img src="parties-4.webp" srcset="parties-4-800.webp 800w, parties-4.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Celebration event at Ramrich" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Celebration</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="parties">
-          <img src="parties-5.webp" alt="Party setup with themed decorations" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="parties">
+          <img src="parties-5.webp" width="640" height="640" alt="Party setup with themed decorations" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Party Setup</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="parties">
-          <img src="birthday-1.webp" alt="Birthday party setup at Hotel Ramrich" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="parties">
+          <img src="birthday-1.webp" srcset="birthday-1-800.webp 800w, birthday-1.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Birthday party setup at Hotel Ramrich" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Birthday Party</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="parties">
-          <img src="birthday-2.webp" alt="Birthday celebration decorations" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="parties">
+          <img src="birthday-2.webp" srcset="birthday-2-800.webp 800w, birthday-2.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="960" alt="Birthday celebration decorations" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Birthday Party</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="parties">
-          <img src="birthday-or-party-1.webp" alt="Party event with elegant setup" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="parties">
+          <img src="birthday-or-party-1.webp" srcset="birthday-or-party-1-800.webp 800w, birthday-or-party-1.webp 1365w" sizes="(max-width: 640px) 50vw, 360px" width="1365" height="1706" alt="Party event with elegant setup" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Party Event</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="parties">
-          <img src="bithday-or-party-2.webp" alt="Celebration event at the venue" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="parties">
+          <img src="bithday-or-party-2.webp" srcset="bithday-or-party-2-800.webp 800w, bithday-or-party-2.webp 1092w" sizes="(max-width: 640px) 50vw, 360px" width="1092" height="1365" alt="Celebration event at the venue" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Celebration</span>
           </div>
         </div>
 
         <!-- ===== PHOTOSHOOTS ===== -->
-        <div class="gallery-item reveal reveal--scale" data-category="photoshoots">
-          <img src="photoshoots-0.webp" alt="Photoshoot location with classical architecture" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="photoshoots">
+          <img src="photoshoots-0.webp" srcset="photoshoots-0-800.webp 800w, photoshoots-0.webp 1440w" sizes="(max-width: 640px) 50vw, 360px" width="1440" height="962" alt="Photoshoot location with classical architecture" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Garden Shoot</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="photoshoots">
-          <img src="photoshoots-1.webp" alt="Scenic photoshoot backdrop at Ramrich" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="photoshoots">
+          <img src="photoshoots-1.webp" srcset="photoshoots-1-800.webp 800w, photoshoots-1.webp 812w" sizes="(max-width: 640px) 50vw, 360px" width="812" height="1015" alt="Scenic photoshoot backdrop at Ramrich" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Statue Path</span>
           </div>
         </div>
-        <div class="gallery-item reveal reveal--scale" data-category="photoshoots">
-          <img src="photoshoots-2.webp" alt="Professional photoshoot location" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" tabindex="0" data-category="photoshoots">
+          <img src="photoshoots-2.webp" srcset="photoshoots-2-800.webp 800w, photoshoots-2.webp 1064w" sizes="(max-width: 640px) 50vw, 360px" width="1064" height="1330" alt="Professional photoshoot location" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">Grand Entrance</span>
           </div>
         </div>
 
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== CTA BANNER ========== -->
-  <div class="parallax-banner" style="min-height: 300px; height: 35vh;">
-    <div class="parallax-banner__bg" style="background-image: url('coverimage.webp');"></div>
-    <div class="parallax-banner__overlay"></div>
-    <div class="parallax-banner__content reveal">
-      <h2>Ready to Plan Your Grand Event?</h2>
-      <p>Book your event at Hotel Ramrich and let us craft an unforgettable luxury experience for you and your guests.</p>
-      <a href="index.html#reservation" class="btn btn--primary">Make a Reservation</a>
-    </div>
-  </div>
+    <!-- ========== CTA ========== -->
+    <section class="section--marble cta">
+      <div class="container">
+        <p class="eyebrow" style="justify-content: center;">Claim Your Date</p>
+        <h2>Your Celebration Awaits</h2>
+        <p class="lede">Let us host the next chapter of your story beneath our colonnades.</p>
+        <a href="index.html#reservation" class="btn btn--gold">Make a Reservation</a>
+      </div>
+    </section>
+  </main>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
+    <div class="frieze" aria-hidden="true"></div>
     <div class="container">
+      <div class="footer__inscription">
+        <img src="ramrich.svg" alt="" width="64" height="56" loading="lazy">
+        <p class="footer__wordmark">Ramrich</p>
+        <p class="footer__motto">Where every guest is honoured.</p>
+      </div>
+
       <div class="footer__grid">
-        <div class="footer__brand">
-          <img src="ramrich.svg" alt="Hotel Ramrich Logo">
+        <div>
+          <h4 class="footer__title">The House</h4>
           <p>Where classical architectural grandeur meets the warmth of modern hospitality. A premier luxury destination for life's most magnificent milestones.</p>
           <div class="footer__social">
             <a href="#" class="footer__social-link" aria-label="Facebook">
@@ -359,16 +347,15 @@
         </div>
 
         <div>
-          <h4 class="footer__title">Quick Links</h4>
-          <a href="index.html#about" class="footer__link">About</a>
-          <a href="index.html#venues" class="footer__link">Venues</a>
+          <h4 class="footer__title">Explore</h4>
+          <a href="index.html#about" class="footer__link">The House</a>
+          <a href="index.html#venues" class="footer__link">The Halls</a>
           <a href="gallery.html" class="footer__link">Gallery</a>
           <a href="index.html#reservation" class="footer__link">Reservations</a>
-          <a href="index.html#contact" class="footer__link">Contact</a>
         </div>
 
         <div>
-          <h4 class="footer__title">Venues</h4>
+          <h4 class="footer__title">Occasions</h4>
           <a href="gallery.html#weddings" class="footer__link">Weddings</a>
           <a href="gallery.html#halls" class="footer__link">Grand Halls</a>
           <a href="gallery.html#conferences" class="footer__link">Conferences</a>
@@ -378,15 +365,14 @@
 
         <div>
           <h4 class="footer__title">Visit Us</h4>
-          <p style="font-size: 0.9rem; line-height: 1.7;">Hotel Ramrich,<br>No 15, Temple Road,<br>Ekala, Ja-ela, Sri Lanka</p>
-          <p style="font-size: 0.9rem; margin-top: 12px;"><a href="tel:+94112225884" style="color: inherit;">+94 11 222 5884</a></p>
-          <p style="font-size: 0.9rem;"><a href="tel:+94112225885" style="color: inherit;">+94 11 222 5885</a></p>
+          <p>Hotel Ramrich,<br>No 15, Temple Road,<br>Ekala, Ja-ela, Sri Lanka</p>
+          <p style="margin-top: 12px;"><a href="tel:+94112225884">+94 11 222 5884</a><br><a href="tel:+94112225885">+94 11 222 5885</a></p>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <p>&copy; 2025 Hotel Ramrich Ekala. All Rights Reserved.</p>
-        <p>Defining Luxury Banquets.</p>
+        <p>&copy; MMXXVI Hotel Ramrich Ekala. All Rights Reserved.</p>
+        <p>Defining Luxury Banquets</p>
       </div>
     </div>
   </footer>
@@ -406,10 +392,6 @@
       </div>
     </div>
   </dialog>
-
-  <!-- Firebase Compatibility SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js" defer></script>
-  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js" defer></script>
 
   <script src="js/main.js" defer></script>
 </body>

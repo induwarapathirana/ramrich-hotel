@@ -14,17 +14,49 @@ const firebaseConfig = {
   appId: "1:990821120025:web:669d92b17399bff3125288"
 };
 
-let db = null;
-if (typeof firebase !== 'undefined') {
-  firebase.initializeApp(firebaseConfig);
-  db = firebase.firestore();
-}
+// Firebase is ~300KB of JS, so it is fetched only after the page has rendered
+// (or immediately when something needs it, e.g. a form submit).
+const FIREBASE_SDKS = [
+  'https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js',
+  'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js'
+];
+
+const loadScript = (src) => new Promise((resolve, reject) => {
+  const script = document.createElement('script');
+  script.src = src;
+  script.async = false; // preserve execution order
+  script.onload = resolve;
+  script.onerror = reject;
+  document.head.appendChild(script);
+});
+
+let dbPromise = null;
+const getDb = () => {
+  if (!dbPromise) {
+    dbPromise = Promise.all(FIREBASE_SDKS.map(loadScript))
+      .then(() => {
+        firebase.initializeApp(firebaseConfig);
+        return firebase.firestore();
+      })
+      .catch(err => {
+        console.warn('Firebase unavailable. Using static fallbacks.', err);
+        return null;
+      });
+  }
+  return dbPromise;
+};
+
+const whenIdle = (fn) => {
+  const run = () => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 3000 }) : setTimeout(fn, 1200));
+  if (document.readyState === 'complete') run();
+  else window.addEventListener('load', run, { once: true });
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   // ─────────────────────────────────────
   // 0. FETCH WEBSITE DYNAMIC CONFIGURATION
   // ─────────────────────────────────────
-  const loadDynamicHotelInfo = () => {
+  const loadDynamicHotelInfo = (db) => {
     if (!db) return;
     db.collection('config').doc('hotelInfo').get()
       .then(doc => {
@@ -45,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const contactPhone = document.getElementById('contactPhone');
           const footerPhone = document.getElementById('footerPhone');
           if (data.phone && data.phone.length > 0) {
-            const phoneHtml = data.phone.map(p => `<a href="tel:${p.replace(/\s+/g, '')}" style="color: inherit;">${p}</a>`).join('<br>');
+            const phoneHtml = data.phone.map(p => `<a href="tel:${p.replace(/\s+/g, '')}">${p}</a>`).join('<br>');
             if (contactPhone) contactPhone.innerHTML = phoneHtml;
             if (footerPhone) footerPhone.innerHTML = phoneHtml;
           }
@@ -68,24 +100,32 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   };
 
-  loadDynamicHotelInfo();
+  if (document.getElementById('contactAddress')) whenIdle(() => getDb().then(loadDynamicHotelInfo));
 
   // ─────────────────────────────────────
-  // 1. PAGE LOADER
+  // 1. HERO VIDEO — desktop only, after load, never on data-saver / reduced motion
   // ─────────────────────────────────────
-  const pageLoader = document.getElementById('pageLoader');
-  if (pageLoader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        pageLoader.classList.add('page-loader--hidden');
-      }, 800);
+  const hero = document.getElementById('hero');
+  const connection = navigator.connection || {};
+  const canPlayHeroVideo = hero &&
+    window.matchMedia('(min-width: 1024px)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+    !connection.saveData &&
+    !/(^|-)2g$/.test(connection.effectiveType || '');
+
+  if (canPlayHeroVideo) {
+    whenIdle(() => {
+      const video = document.createElement('video');
+      video.className = 'hero__video';
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.autoplay = true;
+      video.setAttribute('aria-hidden', 'true');
+      video.src = 'ramrich.mp4';
+      video.addEventListener('playing', () => video.classList.add('hero__video--ready'), { once: true });
+      hero.insertBefore(video, hero.querySelector('.hero__overlay'));
     });
-    // Fallback if load event already fired
-    if (document.readyState === 'complete') {
-      setTimeout(() => {
-        pageLoader.classList.add('page-loader--hidden');
-      }, 800);
-    }
   }
 
   // ─────────────────────────────────────
@@ -232,8 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let itemsHtml = '';
     dbItems.forEach(item => {
       itemsHtml += `
-        <div class="gallery-item reveal reveal--scale" data-category="${item.category}" style="cursor: pointer;">
-          <img src="${item.imageUrl}" alt="${item.caption || ''}" loading="lazy">
+        <div class="gallery-item reveal reveal--scale" data-category="${item.category}" tabindex="0">
+          <img src="${item.imageUrl}" alt="${item.caption || ''}" loading="lazy" decoding="async">
           <div class="gallery-item__overlay">
             <span class="gallery-item__label">${item.caption || 'Hotel Ramrich'}</span>
           </div>
@@ -263,7 +303,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Run dynamic fetch if on gallery page
   if (galleryFilters && galleryGrid) {
-    if (db) {
+    bindStaticGalleryEvents();
+    whenIdle(() => getDb().then(db => {
+      if (!db) return;
       db.collection('categories').orderBy('name', 'asc').get()
         .then(catSnapshot => {
           const dbCategories = [];
@@ -280,18 +322,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
               if (dbItems.length > 0) {
                 renderDynamicGallery(dbCategories, dbItems);
-              } else {
-                bindStaticGalleryEvents();
               }
             });
         })
         .catch(err => {
           console.warn("Could not load dynamic Firestore gallery. Showing static fallbacks:", err);
-          bindStaticGalleryEvents();
         });
-    } else {
-      bindStaticGalleryEvents();
-    }
+    }));
   }
 
   // ─────────────────────────────────────
@@ -442,8 +479,12 @@ document.addEventListener('DOMContentLoaded', () => {
         formSuccess.classList.add('form__success--show');
       };
 
-      if (db) {
-        db.collection('inquiries').add({
+      getDb().then(db => {
+        if (!db) {
+          showSuccessMsg();
+          return;
+        }
+        return db.collection('inquiries').add({
           fullName,
           phone,
           email,
@@ -462,33 +503,8 @@ document.addEventListener('DOMContentLoaded', () => {
           console.error("Firestore inquiry error:", err);
           showSuccessMsg(); // Fallback
         });
-      } else {
-        // Local simulation fallback
-        setTimeout(() => {
-          showSuccessMsg();
-        }, 1200);
-      }
-    });
-  }
-
-  // ─────────────────────────────────────
-  // 8. PARALLAX SCROLL EFFECT
-  // ─────────────────────────────────────
-  const parallaxBanners = document.querySelectorAll('.parallax-banner__bg');
-
-  if (parallaxBanners.length > 0) {
-    const handleParallax = () => {
-      parallaxBanners.forEach(bg => {
-        const section = bg.parentElement;
-        const rect = section.getBoundingClientRect();
-        const scrollPercent = rect.top / window.innerHeight;
-        const translateY = scrollPercent * 40; // parallax intensity
-        bg.style.transform = `translateY(${translateY}px)`;
       });
-    };
-
-    window.addEventListener('scroll', handleParallax, { passive: true });
-    handleParallax();
+    });
   }
 
   // ─────────────────────────────────────
